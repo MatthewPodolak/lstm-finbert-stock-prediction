@@ -1,0 +1,61 @@
+GREEN = "#00A363"
+RED = "#EE4B2B"
+GRAY = "#36454F"
+BLACK = "#000000"
+BLUE = "#0096FF"
+ORANGE = "#E67E22"
+
+UP = GREEN
+DOWN = RED
+FLAT = GRAY
+CLASS_COLORS = [DOWN, FLAT, UP]
+
+HEATMAP_CMAP_DIVERGING = "RdYlGn"
+
+BBOX = "tight"
+DPI = 300
+
+FONT_TITLE = 14
+FONT_LABEL = 12
+FONT_TEXT = 10
+FONT_ANNOT = 8
+FONT_WEIGHT_TITLE = "bold"
+FONT_WEIGHT_ANNOT = "bold"
+
+FIGSIZE_WIDE = (16, 9)
+FIGSIZE_BAR = (14, 8)
+FIGSIZE_SCATTER = (12, 8)
+FIGSIZE_SQUARE = (8, 8)
+FIGSIZE_DUAL = (14, 5)
+
+SCATTER_SIZE = 250
+SCATTER_ALPHA = 0.8
+SCATTER_EDGE_COLOR = BLACK
+SCATTER_EDGE_WIDTH = 1.5
+
+LINE_WIDTH = 1.5
+LINE_WIDTH_THIN = 0.5
+LINE_WIDTH_THICK = 2.0
+
+LINE_STYLE_SOLID = "-"
+LINE_STYLE_DASHED = "--"
+LINE_STYLE_DOTTED = ":"
+
+BAR_ALPHA = 0.85
+BAR_ALPHA_LIGHT = 0.7
+BAR_EDGE_COLOR = BLACK
+BAR_EDGE_WIDTH = 0.5
+
+GRID_ALPHA = 0.3
+
+XTICK_ROTATION = 45
+XTICK_HA = "right"
+
+ANNOT_OFFSET = (5, 5)
+ANNOT_OFFSET_BAR = (0, 3)
+
+def get_bar_color(value: float) -> str:
+    return GREEN if value > 0 else RED
+
+def save_fig(fig, path, dpi=DPI, bbox_inches=BBOX):
+    fig.savefig(path, dpi=dpi, bbox_inches=bbox_inches)
